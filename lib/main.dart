@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:calculator/buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -126,6 +127,16 @@ class _MyHomePageState extends State<MyHomePage> {
                             buttonText: buttons[index],
                             color: Colors.red,
                             textcolor: Colors.white);
+                      } else if (index == buttons.length - 1) {
+                        return MyButton(
+                            buttonTapped: () {
+                              setState(() {
+                                equalPressed();
+                              });
+                            },
+                            buttonText: buttons[index],
+                            color: Colors.deepPurple,
+                            textcolor: Colors.white);
                       } else {
                         return MyButton(
                           buttonTapped: () {
@@ -135,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           },
                           buttonText: buttons[index],
                           color: isOperator(buttons[index])
-                              ? Colors.deepPurple
+                              ? Color.fromARGB(255, 77, 102, 248)
                               : Colors.deepPurple[50],
                           textcolor: isOperator(buttons[index])
                               ? Colors.yellow
@@ -154,5 +165,20 @@ class _MyHomePageState extends State<MyHomePage> {
       return true;
     }
     return false;
+  }
+
+  void equalPressed() {
+    String finalQusetion = userQuestion;
+    finalQusetion = finalQusetion.replaceAll('X', '*');
+    // String preAnswer = userAnswer;
+    // preAnswer = preAnswer.replaceAll('ANS', preAnswer);
+
+    Parser p = Parser();
+    Expression exp = p.parse(finalQusetion);
+
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
+
+    userAnswer = eval.toString();
   }
 }
