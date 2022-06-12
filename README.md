@@ -1,6 +1,6 @@
 # calculator
 
-A new Flutter project.
+A new Flutter project: Calculator . 
 Perform All The Binary Operations 
 ![image](https://user-images.githubusercontent.com/87692073/173225147-c5477790-6709-493a-a7d9-a7beb088d96d.png)
 
