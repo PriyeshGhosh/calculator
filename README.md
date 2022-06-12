@@ -1,6 +1,9 @@
 # calculator
 
 A new Flutter project.
+Perform All The Binary Operations 
+![image](https://user-images.githubusercontent.com/87692073/173225147-c5477790-6709-493a-a7d9-a7beb088d96d.png)
+
 
 ## Getting Started
 
@@ -14,4 +17,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-![image](https://user-images.githubusercontent.com/87692073/173225049-7ea1b3cb-9631-451f-b8f9-b8dd3bf75837.png)
+
